@@ -1,8 +1,10 @@
 public class PongIgra {
 	
+	static Okvir okvir;
+	
 	public static void main(String[] args) {
 		
-		Okvir okvir = new Okvir();
+		okvir = new Okvir();
 		
 	}
  }
@@ -91,6 +93,8 @@ public class IgralnaPlosca extends JPanel implements Runnable {
 			rezultat.draw(g);
 			Toolkit.getDefaultToolkit().sync(); //tekoča animacija
 		}
+		g.setFont(new Font("Consolas", Font.PLAIN, 10));
+		g.drawString("Pritisnite SPACE za ponovni zagon igre.", 10, 10);
 	}
 	public void move() {
 		l1.move();
@@ -177,6 +181,9 @@ public class Lopar extends Rectangle {
 	}
 	
 	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+			ponovi();
+		}
 		switch(id) {
 		case 1: 
 			if(e.getKeyCode()==KeyEvent.VK_W) {
@@ -239,7 +246,10 @@ public class Lopar extends Rectangle {
 		}
 		g.fillRect(x, y, width, height);
 	}
-
+	private void ponovi() {
+		PongIgra.okvir.dispose();
+		PongIgra.main(null);	
+	}
 }
 
 public class Zoga extends Rectangle{
