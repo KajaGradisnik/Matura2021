@@ -2,9 +2,11 @@ package pongIgra;
 
 public class PongIgra {
 	
+	static Okvir okvir;
+	
 	public static void main(String[] args) {
 		
-		Okvir okvir = new Okvir();
+		okvir = new Okvir();
 		
 	}
 

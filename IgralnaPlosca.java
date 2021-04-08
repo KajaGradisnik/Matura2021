@@ -71,6 +71,8 @@ public class IgralnaPlosca extends JPanel implements Runnable {
 			rezultat.draw(g);
 			Toolkit.getDefaultToolkit().sync(); //tekoča animacija
 		}
+		g.setFont(new Font("Consolas", Font.PLAIN, 10));
+		g.drawString("Pritisnite SPACE za ponovni zagon igre.", 10, 10);
 	}
 	public void move() {
 		l1.move();

@@ -15,6 +15,9 @@ public class Lopar extends Rectangle {
 	}
 	
 	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+			ponovi();
+		}
 		switch(id) {
 		case 1: 
 			if(e.getKeyCode()==KeyEvent.VK_W) {
@@ -76,6 +79,10 @@ public class Lopar extends Rectangle {
 			g.setColor(Color.PINK);
 		}
 		g.fillRect(x, y, width, height);
+	}
+	private void ponovi() {
+		PongIgra.okvir.dispose();
+		PongIgra.main(null);	
 	}
 
 }
